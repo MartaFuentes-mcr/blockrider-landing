@@ -12,14 +12,8 @@ blockrider-landing/
 │   ├── user-app-request.jpg
 │   └── contacto-animado.gif
 ├── index.html
-├── .gitignore
 └── README.md
 ```
-
-## 🌐 Demo
-
-GitHub Pages URL: [https://usuario.github.io/blockrider-landing](https://usuario.github.io/blockrider-landing)
-
 ## ✨ Características
 
 - Diseño moderno con TailwindCSS + Bootstrap Icons
