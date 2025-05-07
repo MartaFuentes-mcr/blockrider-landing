@@ -1,0 +1,69 @@
+<!-- contacto.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - BlockRider</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="bg-dark text-white p-3 border-bottom border-purple-500">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h3 text-purple-300">BlockRider</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a href="index.html" class="nav-link text-white">Inicio</a></li>
+          <li class="nav-item"><a href="nuestros.html" class="nav-link text-white">Nosotros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <h2 class="text-3xl font-bold text-purple-400 text-center mb-6">Contáctanos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 p-6 rounded shadow">
+        <form class="space-y-4">
+          <div>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          <div>
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div>
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      <div class="bg-[#181828] p-6 rounded shadow">
+        <h4 class="text-xl font-semibold mb-4 text-purple-300">Información</h4>
+        <ul class="space-y-3">
+          <li><i class="bi bi-geo-alt-fill text-purple-400"></i> Calle Blockchain 123, Ciudad Cripto</li>
+          <li><i class="bi bi-envelope-fill text-purple-400"></i> contacto@blockrider.io</li>
+          <li><i class="bi bi-telephone-fill text-purple-400"></i> +506 800-BLOCKRIDER</li>
+          <li><i class="bi bi-clock-fill text-purple-400"></i> Lunes a Viernes, 9am - 6pm</li>
+        </ul>
+        <iframe class="w-full h-48 mt-4 rounded" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=San+José,Costa+Rica" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-zinc-900 text-gray-400 text-center py-6 border-t border-purple-500 mt-10">
+    <p>&copy; 2025 BlockRider. Todos los derechos reservados.</p>
+    <div class="flex justify-center gap-4 mt-3 text-xl">
+      <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-telegram"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
+
