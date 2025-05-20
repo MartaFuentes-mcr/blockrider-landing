@@ -40,7 +40,7 @@
 
       <!-- Menú escritorio -->
       <nav class="hidden md:flex gap-6">
-        <a href="../html/main.html" class="hover:text-purple-400 transition">Inicio</a>
+        <a href="/index.html" class="hover:text-purple-400 transition">Inicio</a>
         <a href="nosotros.html" class="hover:text-purple-400 transition">Nosotros</a>
       </nav>
 
@@ -52,10 +52,11 @@
 
     <!-- Menú móvil -->
     <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pt-4 pb-2 bg-[#0f0f0f]">
-      <a href="../html/main.html" class="block py-2 hover:text-purple-400">Inicio</a>
-      <a href="nosotros.html" class="block py-2 hover:text-purple-400">Contacto</a>
+      <a href="/index.html" class="block py-2 hover:text-purple-400">Inicio</a>
+      <a href="contacto.html" class="block py-2 hover:text-purple-400">Contacto</a>
     </div>
   </header>
+
 <!--Menú Formulario-->
 <main class="container mx-auto py-12 px-6">
   <h2 class="text-3xl font-bold text-purple-400 text-center mb-10">Contáctanos</h2>
@@ -135,5 +136,15 @@
       <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-telegram"></i></a>
     </div>
   </footer>
+
+  <script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>

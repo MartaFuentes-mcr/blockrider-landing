@@ -1,25 +1,43 @@
-# Archivos del sistema
+# === SISTEMA / EDITOR ===
+.vscode/
 .DS_Store
 Thumbs.db
 
-# Configuración del editor
-.vscode/
-.idea/
-
-# Archivos de sistema operativo
+# === SISTEMAS OPERATIVOS ===
 *.log
-
-# Archivos temporales
 *.tmp
-*.swp
 
-# Salidas de compilación (si usas SASS compilado o Webpack en el futuro)
+# === SCSS / CSS intermedios ===
+*.map
+
+# === ARCHIVOS DE COMPILACIÓN O TEMPORALES (por si más adelante usas SASS o Node) ===
+node_modules/
 dist/
 build/
-node_modules/
-
-# Git ignorará este archivo (por seguridad)
 .env
-.env.local
-.env.development
-.env.production
+
+# === ARCHIVOS DE BACKUP DE VS CODE O EDITORES ===
+*.bak
+*~
+
+# === SISTEMA / EDITOR ===
+.vscode/
+.DS_Store
+Thumbs.db
+
+# === SISTEMAS OPERATIVOS ===
+*.log
+*.tmp
+
+# === SCSS / CSS intermedios ===
+*.map
+
+# === ARCHIVOS DE COMPILACIÓN O TEMPORALES (por si más adelante usas SASS o Node) ===
+node_modules/
+dist/
+build/
+.env
+
+# === ARCHIVOS DE BACKUP DE VS CODE O EDITORES ===
+*.bak
+*~
