@@ -1,0 +1,25 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración del editor
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Salidas de compilación (si usas SASS compilado o Webpack en el futuro)
+dist/
+build/
+node_modules/
+
+# Git ignorará este archivo (por seguridad)
+.env
+.env.local
+.env.development
+.env.production
