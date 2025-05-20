@@ -1,0 +1,21 @@
+// scss/main.scss
+
+@use 'variables' as *;
+@use 'base';
+@use 'buttons';
+@use 'timeline';
+@use 'utilities';
+@use 'animation';
+
+@use 'variables';
+
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/hero';
+
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/wallet';
+
+
+

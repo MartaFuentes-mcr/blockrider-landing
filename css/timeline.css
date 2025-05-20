@@ -1,0 +1,17 @@
+.timeline li {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid #a855f7;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #a855f7;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=timeline.css.map */

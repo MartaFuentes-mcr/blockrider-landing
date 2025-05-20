@@ -1,0 +1,57 @@
+footer {
+  background: $black-bg;
+  color: $text-light;
+  padding: 3rem 1.5rem;
+
+  h4, h5 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li a {
+      color: $text-light;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input[type="email"] {
+      padding: 0.5rem;
+      border-radius: $radius;
+      border: none;
+      width: 100%;
+    }
+
+    button {
+      background: $primary;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: $radius;
+      cursor: pointer;
+
+      &:hover {
+        background: $primary-hover;
+      }
+    }
+  }
+
+  .copy {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+  }
+}

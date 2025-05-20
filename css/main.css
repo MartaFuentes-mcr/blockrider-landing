@@ -1,0 +1,150 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.btn-primary {
+  background-color: #7c3aed;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #6d28d9;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  border: 2px solid #a855f7;
+  color: #c084fc;
+  transition: all 0.3s ease-in-out;
+}
+.btn-outline-light:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid #a855f7;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #a855f7;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-purple-300 {
+  color: #c084fc !important;
+}
+
+.text-purple-400 {
+  color: #a855f7 !important;
+}
+
+.bg-purple-600 {
+  background-color: #7c3aed !important;
+}
+
+.border-purple-400 {
+  border-color: #a855f7 !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-content {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.btn-primary {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.car-icon {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.feature-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+/*# sourceMappingURL=main.css.map */

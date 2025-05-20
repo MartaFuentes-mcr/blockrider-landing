@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.btn-primary {
+  background-color: $purple-600;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $purple-700;
+  }
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  border: 2px solid $purple-400;
+  color: $purple-300;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $purple-400;
+    color: white;
+  }
+}
+

@@ -1,0 +1,54 @@
+.hero {
+  background: $gradient-purple;
+  padding: 5rem 2rem;
+  color: white;
+  text-align: center;
+  border-radius: $radius;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: $text-light;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-dark, .btn-light {
+    padding: 0.75rem 1.5rem;
+    border-radius: $radius;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-dark {
+    background: #111827;
+    color: white;
+
+    &:hover {
+      background: #1f2937;
+    }
+  }
+
+  .btn-light {
+    background: white;
+    color: $primary;
+
+    &:hover {
+      background: #f3e8ff;
+    }
+  }
+}

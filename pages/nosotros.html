@@ -1,54 +1,184 @@
-<!-- nuestros.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros - BlockRider</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Fuentes y estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body class="bg-black text-white">
-  <header class="bg-dark text-white p-3 border-bottom border-purple-500">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="h3 text-purple-300">BlockRider</h1>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a href="../index.html" class="nav-link text-white">Inicio</a></li>
-          <li class="nav-item"><a href="contacto.html" class="nav-link text-white">Contacto</a></li>
-        </ul>
+
+  <!-- Navbar -->
+  <header class="bg-[#0f0f0f] p-4 shadow-md sticky top-0 z-50">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <div class="flex items-center gap-2">
+        <div class="bg-purple-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">BR</div>
+        <span class="text-xl font-semibold">BlockRider</span>
+      </div>
+
+      <!-- Menú escritorio -->
+      <nav class="hidden md:flex gap-6">
+        <a href="../html/main.html" class="hover:text-purple-400 transition">Inicio</a>
+        <a href="contacto.html" class="hover:text-purple-400 transition">Contacto</a>
       </nav>
+
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pt-4 pb-2 bg-[#0f0f0f]">
+      <a href="../html/main.html" class="block py-2 hover:text-purple-400">Inicio</a>
+      <a href="contacto.html" class="block py-2 hover:text-purple-400">Contacto</a>
     </div>
   </header>
 
-  <main class="container py-5">
-    <h2 class="text-3xl font-bold text-purple-400 text-center mb-6">Nuestra Historia</h2>
-    <section class="mb-8">
-      <h3 class="text-xl font-semibold text-purple-300">Misión</h3>
-      <p class="text-gray-300">Empoderar a las personas con un transporte libre, eficiente y descentralizado.</p>
-    </section>
-    <section class="mb-8">
-      <h3 class="text-xl font-semibold text-purple-300">Visión</h3>
-      <p class="text-gray-300">Ser la plataforma de movilidad descentralizada líder, impulsada por tecnología abierta y comunidad global.</p>
-    </section>
-    <section class="mb-8">
-      <h3 class="text-xl font-semibold text-purple-300">Valores</h3>
-      <ul class="list-disc ps-5 text-gray-300">
-        <li>Transparencia</li>
-        <li>Autonomía</li>
-        <li>Seguridad</li>
-        <li>Innovación</li>
-        <li>Colaboración</li>
-      </ul>
-    </section>
-    <section class="mb-8">
-      <h3 class="text-xl font-semibold text-purple-300">Equipo y Comunidad</h3>
-      <p class="text-gray-300">BlockRider está formado por desarrolladores, diseñadores, y visionarios que creen en el futuro descentralizado.</p>
-    </section>
-  </main>
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto py-10 px-4 fade-in-section">
+    <h2 class="text-3xl font-bold text-purple-400 text-center mb-10">Nuestra Historia</h2>
 
-  <footer class="bg-zinc-900 text-gray-400 text-center py-6 border-t border-purple-500 mt-10">
+
+<!--Seccion Nuestra mision-->
+
+    <section class="mb-10 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
+    
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-bullseye text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Nuestra Misión</h4>
+      <p class="text-gray-400">Empoderar a las personas con un transporte libre, eficiente y descentralizado.</p>
+    </div>
+<!--Nuestra Visión-->
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-eye text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Nuestra Visión</h4>
+      <p class="text-gray-400">Ser la plataforma de movilidad descentralizada líder, impulsada por tecnología abierta y comunidad global.</p>
+    </div>
+
+  </div>
+</section>
+
+  <!--Seccion Valores-->
+   
+  <section class="mb-10 px-4">
+  <h3 class="text-2xl font-semibold text-purple-400 text-center mb-6">Nuestros valores</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+    
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-eye-fill text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Transparencia</h4>
+      <p class="text-gray-400">Acceso abierto a datos y decisiones. Cada acción es verificable.</p>
+    </div>
+
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-person-check-fill text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Autonomía</h4>
+      <p class="text-gray-400">Empoderamos a cada usuario para tomar el control de su movilidad.</p>
+    </div>
+
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-shield-lock-fill text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Seguridad</h4>
+      <p class="text-gray-400">Protección total gracias a la blockchain y sistemas descentralizados.</p>
+    </div>
+
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-lightbulb-fill text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Innovación</h4>
+      <p class="text-gray-400">Siempre un paso adelante con IA, algoritmos y mejora continua.</p>
+    </div>
+
+    <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+      <i class="bi bi-people-fill text-3xl text-purple-400 mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Colaboración</h4>
+      <p class="text-gray-400">Construimos con la comunidad, para la comunidad. Sin jerarquías.</p>
+    </div>
+
+    
+
+  <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
+    <i class="bi bi-tree-fill text-3xl text-purple-400 mb-3"></i>
+    <h4 class="text-lg font-bold mb-2">Sostenibilidad</h4>
+    <p class="text-gray-400">Optimizamos los recursos para reducir el impacto ambiental y fomentar una movilidad verde.</p>
+  </div>
+</section>
+
+
+</section>
+
+
+
+
+
+<!--Seccion equipo y comunidad-->
+    
+<!-- Sección manifiesto Comunidad -->
+<section class="relative py-20 px-6 text-center text-white bg-gradient-to-b from-black via-[#0f0f0f] to-black fade-in-section overflow-hidden">
+
+  <!-- Título inspirador -->
+  <h2 class="text-4xl font-extrabold text-purple-400 mb-6">Somos una comunidad construyendo el futuro</h2>
+  <p class="text-lg text-gray-300 mb-10">Más que un equipo, somos una red de personas comprometidas con una nueva movilidad.</p>
+
+  <!-- Declaraciones estilo manifiesto -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-lg font-medium text-gray-200">
+    <div class="flex items-start gap-3">
+      <span class="text-2xl">🤝</span>
+      <p>Creemos en la colaboración por encima de la competencia.</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-2xl">🔗</span>
+      <p>Apostamos por la descentralización como forma de empoderar.</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-2xl">🌐</span>
+      <p>Construimos tecnología accesible para todos.</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-2xl">🚀</span>
+      <p>Innovamos en comunidad, sin jerarquías.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-10">
+    <a href="contacto.html" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition shadow-lg">
+      Únete a la revolución
+    </a>
+  </div>
+
+
+</section>
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="bg-[#0f0f0f] text-gray-400 text-center py-6 border-t border-purple-500 mt-10">
     <p>&copy; 2025 BlockRider. Todos los derechos reservados.</p>
     <div class="flex justify-center gap-4 mt-3 text-xl">
       <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-facebook"></i></a>
@@ -57,7 +187,31 @@
       <a href="#" class="text-purple-400 hover:text-purple-300"><i class="bi bi-telegram"></i></a>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Animación al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
 </body>
 </html>
-
 

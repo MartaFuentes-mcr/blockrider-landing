@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+.hidden {
+  display: none !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Clases de color reutilizables
+.text-purple-300 { color: $purple-300 !important; }
+.text-purple-400 { color: $purple-400 !important; }
+.bg-purple-600 { background-color: $purple-600 !important; }
+.border-purple-400 { border-color: $purple-400 !important; }
+

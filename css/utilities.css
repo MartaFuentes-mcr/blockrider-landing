@@ -1,0 +1,33 @@
+.hidden {
+  display: none !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-purple-300 {
+  color: #c084fc !important;
+}
+
+.text-purple-400 {
+  color: #a855f7 !important;
+}
+
+.bg-purple-600 {
+  background-color: #7c3aed !important;
+}
+
+.border-purple-400 {
+  border-color: #a855f7 !important;
+}
+
+/*# sourceMappingURL=utilities.css.map */

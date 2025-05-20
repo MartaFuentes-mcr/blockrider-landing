@@ -1,0 +1,22 @@
+.btn-primary {
+  background-color: #7c3aed;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #6d28d9;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  border: 2px solid #a855f7;
+  color: #c084fc;
+  transition: all 0.3s ease-in-out;
+}
+.btn-outline-light:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+/*# sourceMappingURL=buttons.css.map */
