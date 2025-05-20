@@ -12,3 +12,25 @@ Bienvenido al repositorio oficial de **BlockRider**, una plataforma de transport
 - Sección de descarga con botones para stores
 - Política de cookies
 
+
+---
+
+## 🔧 Tecnologías
+
+- HTML5
+- SCSS (SASS con estructura modular)
+- TailwindCSS
+- Bootstrap Icons
+- Git + GitHub Pages
+
+---
+
+## 🧠 Autor
+
+Desarrollado por [Marta Fuentes](https://github.com/martafuentes-mcr) como parte de la entrega de Diplomatura Full Stack (Coderhouse).
+
+---
+
+## 📜 Licencia
+
+Este proyecto está bajo la licencia MIT.
