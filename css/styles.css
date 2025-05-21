@@ -267,6 +267,28 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px; /* Espacio dentro de los elementos de lista */
 }
 
+/* Mostrar el menú de escritorio solo en pantallas grandes */
+@media (min-width: 768px) {
+  #desktop-menu {
+    display: flex !important;
+  }
+  #menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Mostrar el botón hamburguesa solo en móviles */
+@media (max-width: 767px) {
+  #desktop-menu {
+    display: none !important;
+  }
+  #menu-toggle {
+    display: inline-block !important;
+  }
+}
+
+
+
 /* Otros estilos para el menú, como color de fondo, tipografía, etc. */
 
 

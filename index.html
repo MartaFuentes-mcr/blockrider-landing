@@ -1,551 +1,709 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BlockRider es una app de transporte descentralizado con blockchain, IA y minería cripto." />
-  <meta name="keywords" content="blockchain, transporte, cripto, rideshare, descentralizado, BlockRider" />
-  <title>BlockRider</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="BlockRider es una app de transporte descentralizado con blockchain, IA y minería cripto." />
+<meta name="keywords" content="blockchain, transporte, cripto, rideshare, descentralizado, BlockRider" />
+<title>BlockRider</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-black text-white">
 
+<header class="bg-[#0f0f0f] text-white px-6 py-4 flex justify-between items-center shadow-md relative z-50">
 
-   <!--Header mejorado y estilizado-->
-
-  <header class="bg-[#0f0f0f] text-white px-6 py-4 flex justify-between items-center shadow-md">
+  <!-- Logo -->
   <div class="flex items-center gap-2">
     <div class="bg-purple-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">BR</div>
     <span class="text-xl font-semibold">BlockRider</span>
-  </div>
-
-
-
-  <!-- Botón Hamburguesa -->
-  <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-    <i class="bi bi-list text-2xl"></i>
-  </button>
-
-  <!-- Menú Desktop -->
-
-    <nav class="flex items-center gap-6 hidden md:flex">
-    <a href="index.html" class="hover:text-purple-400">Inicio</a>
-    <a href="../pages/nosotros.html" class="hover:text-purple-400">Nosotros</a>
-    <a href="../pages/contacto.html" class="hover:text-purple-400">Contacto</a>
-  
-    <!--Boton Wallet-->
-    <button onclick="conectarWallet()" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
-      <i class="bi bi-wallet2 me-2"></i>Conectar Wallet
-    </button>
-  </nav>
-</header>
-
-<!-- Menú Mobile -->
-<div id="mobile-menu" class="hidden flex flex-col gap-4 px-6 py-4 bg-[#0f0f0f] md:hidden border-t border-gray-700 z-40">
-  <a href="index.html" class="hover:text-purple-400">Inicio</a>
-  <a href="../pages/nosotros.html" class="hover:text-purple-400">Nosotros</a>
-  <a href="../pages/contacto.html" class="hover:text-purple-400">Contacto</a>
-  <button onclick="conectarWallet()" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition w-fit">
-    <i class="bi bi-wallet2 me-2"></i>Conectar Wallet
-  </button>
 </div>
 
-   <!-- Hero Section -->
-   <section class="relative bg-gradient-to-br from-[#0d0d12] to-[#1a1a2e] py-20 px-5 md:px-20 text-white">
+<!-- Botón Hamburguesa SOLO visible en móvil -->
+<button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+  <i class="bi bi-list text-2xl"></i>
+</button>
+
+<!-- Menú escritorio: solo visible desde md -->
+<nav id="desktop-menu" class="hidden md:flex gap-6 items-center">
+  <a href="index.html" class="hover:text-purple-400">Inicio</a>
+  <a href="pages/nosotros.html" class="hover:text-purple-400">Nosotros</a>
+  <a href="pages/contacto.html" class="hover:text-purple-400">Contacto</a>
+  <button onclick="conectarWallet()" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+    <i class="bi bi-wallet2 me-2"></i>Conectar Wallet
+  </button>
+</nav>
+
+<!-- Menú Mobile -->
+<div id="mobile-menu"
+    class="hidden flex-col gap-4 px-6 py-6 bg-[#0f0f0f]/90 backdrop-blur-sm md:hidden border-t border-gray-700 absolute top-full left-0 w-full z-50">
+<a href="index.html" class="block hover:text-purple-400 text-lg">Inicio</a>
+<a href="pages/nosotros.html" class="block hover:text-purple-400 text-lg">Nosotros</a>
+<a href="pages/contacto.html" class="block hover:text-purple-400 text-lg">Contacto</a>
+<button onclick="conectarWallet()"
+        class="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition w-fit animate-pulse">
+    <i class="bi bi-wallet2 me-2"></i>Conectar Wallet
+</button>
+</div>
+
+</header>
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-[#0d0d12] to-[#1a1a2e] py-20 px-5 md:px-20 text-white">
     <div class="flex flex-col-reverse md:flex-row justify-between items-center gap-10">
-      <div class="md:w-1/2 text-center md:text-left">
+    <div class="md:w-1/2 text-center md:text-left">
         <span class="inline-block px-4 py-1 text-sm font-semibold text-purple-300 bg-purple-900/30 rounded-full mb-4">
-          La revolución del transporte ha llegado
+        La revolución del transporte ha llegado
         </span>
         <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-          Transporte <span class="text-purple-500">descentralizado</span><br />con blockchain
+        Transporte <span class="text-purple-500">descentralizado</span><br />con blockchain
         </h1>
         <p class="mt-5 text-lg text-gray-300 max-w-xl">
-          BlockRider combina blockchain, IA y minería cripto para ofrecerte una experiencia de transporte segura, eficiente y rentable.
+        BlockRider combina blockchain, IA y minería cripto para ofrecerte una experiencia de transporte segura, eficiente y rentable.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a href="#descargar" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-all">
+        <a href="#descargar" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md transition-all">
             <i class="bi bi-download me-2"></i> Descargar App
-          </a>
+        </a>
         
 
 
-
+<!--Iconos Hero section-->
         </div>
         <div class="flex gap-10 mt-10 justify-center md:justify-start text-sm text-gray-400">
-          <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center">
             <i class="bi bi-shield-check text-purple-400 text-2xl mb-2"></i>
             <span>Seguro</span>
-          </div>
-          <div class="flex flex-col items-center">
+        </div>
+        <div class="flex flex-col items-center">
             <i class="bi bi-lightning-charge text-purple-400 text-2xl mb-2"></i>
             <span>Rápido</span>
-          </div>
-          <div class="flex flex-col items-center">
+        </div>
+        <div class="flex flex-col items-center">
             <i class="bi bi-people text-purple-400 text-2xl mb-2"></i>
             <span>Comunitario</span>
-          </div>
         </div>
-      </div>
-      <div class="md:w-1/2 flex justify-center">
+        </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
         <div class="relative">
-          <img src="/imagenes/blockrider_polo.png" alt="Usuario solicitando transporte" class="rounded-xl shadow-xl w-[320px] h-[240px] object-cover border border-purple-700" />
+        <img src="/imagenes/blockrider_polo.png" alt="Usuario solicitando transporte" class="rounded-xl shadow-xl w-[320px] h-[240px] object-cover border border-purple-700" />
         </div>
-      </div>
     </div>
-  </section>
-  
-  
- 
-  
-  <!-- Ventajas estilo tarjetas modernas -->
-  <section class="bg-[#12131a] py-20 px-5 md:px-20">
+    </div>
+</section>
+
+<!-- Ventajas estilo tarjetas modernas -->
+<section class="bg-[#12131a] py-20 px-5 md:px-20">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-white text-center mb-4">Ventajas de usar BlockRider</h2>
-      <p class="text-center text-gray-400 mb-12">Descubre por qué BlockRider está revolucionando cómo nos movemos y generamos ingresos.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+    <h2 class="text-3xl font-bold text-white text-center mb-4">Ventajas de usar BlockRider</h2>
+    <p class="text-center text-gray-400 mb-12">Descubre por qué BlockRider está revolucionando cómo nos movemos y generamos ingresos.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-shield-lock text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">Descentralización total</h3>
-          <p class="text-gray-400">Sin comisiones abusivas ni control corporativo. Tú tienes el control de tus datos y ganancias.</p>
+        <i class="bi bi-shield-lock text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">Descentralización total</h3>
+        <p class="text-gray-400">Sin comisiones abusivas ni control corporativo. Tú tienes el control de tus datos y ganancias.</p>
         </div>
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-cash-coin text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">Ingresos extra</h3>
-          <p class="text-gray-400">Mina criptomonedas mientras usas la app. Genera ingresos pasivos con tu dispositivo.</p>
+        <i class="bi bi-cash-coin text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">Ingresos extra</h3>
+        <p class="text-gray-400">Mina criptomonedas mientras usas la app. Genera ingresos pasivos con tu dispositivo.</p>
         </div>
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-cpu text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">IA al servicio del usuario</h3>
-          <p class="text-gray-400">Rutas optimizadas, precios justos y soporte inteligente para una experiencia superior.</p>
+        <i class="bi bi-cpu text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">IA al servicio del usuario</h3>
+        <p class="text-gray-400">Rutas optimizadas, precios justos y soporte inteligente para una experiencia superior.</p>
         </div>
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-shield-shaded text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">Privacidad y seguridad</h3>
-          <p class="text-gray-400">Tus datos están protegidos en la blockchain. Máxima seguridad en cada transacción.</p>
+        <i class="bi bi-shield-shaded text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">Privacidad y seguridad</h3>
+        <p class="text-gray-400">Tus datos están protegidos en la blockchain. Máxima seguridad en cada transacción.</p>
         </div>
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-globe text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">Impacto social</h3>
-          <p class="text-gray-400">Una red abierta para transformar la movilidad urbana y crear comunidades más conectadas.</p>
+        <i class="bi bi-globe text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">Impacto social</h3>
+        <p class="text-gray-400">Una red abierta para transformar la movilidad urbana y crear comunidades más conectadas.</p>
         </div>
         <div class="bg-[#1f1f2f] p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <i class="bi bi-people-fill text-3xl text-purple-400 mb-3"></i>
-          <h3 class="text-lg font-semibold mb-2">Comunidad activa</h3>
-          <p class="text-gray-400">Forma parte de una comunidad global que comparte los valores de descentralización y colaboración.</p>
+        <i class="bi bi-people-fill text-3xl text-purple-400 mb-3"></i>
+        <h3 class="text-lg font-semibold mb-2">Comunidad activa</h3>
+        <p class="text-gray-400">Forma parte de una comunidad global que comparte los valores de descentralización y colaboración.</p>
         </div>
-      </div>
     </div>
-  </section>
-  
-  
-  <!-- Política de Cookies -->
-  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#181828] text-white py-4 px-6 z-50 shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
+    </div>
+</section>
+
+<!-- Política de Cookies -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#181828] text-white py-4 px-6 z-50 shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
     <div class="max-w-3xl">
-      <p class="text-sm">
+    <p class="text-sm">
         <span class="lang-es">Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al hacer clic en "Aceptar", aceptas el uso de cookies. Puedes obtener más información en nuestra <a href="#" class="underline text-purple-400 hover:text-purple-300">Política de Cookies</a>.</span>
         <span class="lang-en hidden">We use cookies to improve your experience. By clicking "Accept", you agree to our cookie usage. Learn more in our <a href="#" class="underline text-purple-400 hover:text-purple-300">Cookie Policy</a>.</span>
-      </p>
+    </p>
     </div>
     <div class="flex gap-2">
-      <button onclick="document.getElementById('cookie-banner').classList.add('hidden')" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">Aceptar</button>
-      <a href="#" class="px-4 py-2 border border-gray-400 text-gray-200 rounded hover:bg-white hover:text-black transition">Más información</a>
+    <button onclick="document.getElementById('cookie-banner').classList.add('hidden')" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">Aceptar</button>
+    <a href="#" class="px-4 py-2 border border-gray-400 text-gray-200 rounded hover:bg-white hover:text-black transition">Más información</a>
     </div>
-  </div>
-  
-  <script>
+</div>
+
+<script>
     const langToggle = document.getElementById('langToggle');
     langToggle.addEventListener('click', () => {
-      document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden'));
-      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
+    document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden'));
+    document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
     });
-  
+
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('bg-white');
-      document.body.classList.toggle('text-black');
-      document.body.classList.toggle('text-white');
-      document.body.classList.toggle('bg-black');
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('text-black');
+    document.body.classList.toggle('text-white');
+    document.body.classList.toggle('bg-black');
     });
-  </script>
-  
-    <!-- Bienvenida -->
-    <section class="mb-5">
-      <div class="row align-items-center">
-        <div class="col-md-8">
-          <h2 class="text-3xl font-bold text-purple-300 mb-3">Bienvenid@ a BlockRider</h2>
-          <p>BlockRider no es solo una app de transporte, es una revolución sobre ruedas. Nuestra plataforma descentralizada combina lo mejor de la tecnología blockchain, la inteligencia artificial y la minería cripto.</p>
-          <p>¿Cansado de las plataformas tradicionales? Con BlockRider, cada viaje cuenta: puedes generar ingresos mediante minería cripto mientras te conectas con una comunidad autónoma e innovadora.</p>
-          <p>¡Súmate al futuro del transporte inteligente, descentralizado y rentable!</p>
-          <a href="#descargar" class="btn btn-primary mt-3">Quiero ser parte</a>
-        </div>
-        <div class="col-md-4 text-center">
-          <img src="/imagenes/pidiendo blockrider.png" alt="Imagen descriptiva de BlockRider" class="img-fluid rounded" />
-        </div>
+</script>
+
+<section class="bg-black text-white py-16 px-6 md:px-16">
+<div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12 animate-fade-in">
+    
+    <!-- Texto -->
+    <div class="md:w-1/2">
+    <h2 class="text-4xl font-extrabold text-purple-500 mb-4">Bienvenid@ a BlockRider</h2>
+    <p class="mb-3 text-lg">
+        <span class="text-purple-400 font-semibold">BlockRider</span> no es solo una app de transporte, es una revolución sobre ruedas. Nuestra plataforma descentralizada combina lo mejor de la tecnología <span class="text-purple-400 font-medium">blockchain</span>, la <span class="text-purple-400 font-medium">inteligencia artificial</span> y la <span class="text-purple-400 font-medium">minería cripto</span>.
+    </p>
+    <p class="mb-3 text-lg">
+        ¿Cansado de las plataformas tradicionales? Con BlockRider, cada viaje cuenta: puedes <span class="text-purple-300 font-medium">generar ingresos</span> mediante minería cripto mientras te conectas con una comunidad autónoma e innovadora.
+    </p>
+    <p class="mb-6 text-lg">¡Súmate al futuro del transporte <span class="text-purple-300 font-medium">inteligente, descentralizado y rentable</span>!</p>
+
+    <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 animate-pulse">
+        <i class="bi bi-person-plus-fill"></i> Quiero ser parte
+    </button>
+    </div>
+
+    <!-- Imagen -->
+    <div class="md:w-1/2">
+      <img src="/imagenes/pidiendo blockrider.png" alt="Usuario usando BlockRider"
+           class="rounded-lg shadow-lg w-full max-w-md mx-auto animate-fade-in delay-200">
+    </div>
+  </div>
+</section>
+
+
+<!--Nuestra Propuesta-->
+
+<section class="bg-[#0f0f0f] text-white py-20 px-6 md:px-16">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Imagen -->
+    <div class="md:w-1/2">
+      <img src="/imagenes/coche_BR.png" alt="Coche tesla Blockrider" class="w-full rounded-xl shadow-lg border border-purple-500 hover:scale-105 transition-transform duration-300">
+    </div>
+
+    <!-- Contenido -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-purple-400 mb-4 leading-tight">Tecnología al servicio del movimiento</h2>
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        Transporte impulsado por <span class="text-purple-300 font-semibold">blockchain</span> y optimizado con <span class="text-purple-300 font-semibold">IA</span>.
+        Una red <span class="text-purple-300 font-semibold">abierta, eficiente</span> y alineada con los desafíos ecológicos actuales.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!--Como funciona -->
+<section class="bg-[#0f0f1a] text-white py-16 px-4 md:px-10">
+  <div class="max-w-screen-xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">¿Cómo funciona BlockRider?</h2>
+    <p class="text-gray-400 text-lg">Un proceso simple para revolucionar tu forma de moverte y generar ingresos.</p>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-3 max-w-screen-lg mx-auto text-center">
+    <div>
+      <div class="text-purple-500 text-5xl mb-4">
+        <i class="bi bi-phone-fill"></i>
       </div>
-    </section>
+      <h3 class="text-xl font-semibold mb-2">1. Descarga la app</h3>
+      <p class="text-gray-400">Disponible pronto para Android, iOS y escritorio. Regístrate como pasajero o conductor.</p>
+    </div>
 
-    <!-- Propuesta -->
-    <section class="mb-5">
-      <h3 class="text-2xl font-semibold text-purple-400">Nuestra propuesta</h3>
-      <img src="img/vision.jpg" alt="Nuestra visión" class="img-fluid rounded mb-3" />
-      <p>BlockRider es una app innovadora que transforma la movilidad. Con peer-to-peer, pagos cripto, minería y algoritmos inteligentes, somos la alternativa transparente a Uber y similares.</p>
-      <p>Ofrecemos ingresos pasivos por uso de hardware local o minería en la nube. Somos una comunidad enfocada en tecnología abierta y soluciones sustentables.</p>
-    </section>
+    <div>
+      <div class="text-purple-500 text-5xl mb-4">
+        <i class="bi bi-cpu-fill"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">2. Activa la minería</h3>
+      <p class="text-gray-400">Elige entre minería con tu CPU o en la nube. Genera ingresos pasivos mientras usas la app.</p>
+    </div>
 
-    <!-- Cómo funciona -->
-    <section class="mb-5">
-      <h3 class="text-2xl font-semibold text-purple-400">¿Cómo funciona BlockRider?</h3>
-      <ol class="list-decimal ps-4">
-        <li><strong>Descarga:</strong> Android, iOS y escritorio.</li>
-        <li><strong>Registro:</strong> Crea tu cuenta.</li>
-        <li><strong>Minería:</strong> CPU o nube.</li>
-        <li><strong>Viajes:</strong> Conexión directa usuario-conductor.</li>
-        <li><strong>Pagos cripto:</strong> Tokens por viaje y potencia compartida.</li>
-      </ol>
-    </section>
-
-    <!-- Ventajas -->
-    <section class="mb-5">
-      <h3 class="text-2xl font-semibold text-purple-400">Ventajas de usar BlockRider</h3>
-      <ul class="list-disc ps-4">
-        <li>🚗 <strong>Descentralización:</strong> sin control corporativo.</li>
-        <li>💸 <strong>Ingresos extra:</strong> minería mientras usás la app.</li>
-        <li>🤖 <strong>IA:</strong> rutas óptimas y precios justos.</li>
-        <li>🔒 <strong>Seguridad:</strong> datos protegidos en la blockchain.</li>
-        <li>🌍 <strong>Impacto social:</strong> movilidad urbana libre y abierta.</li>
-      </ul>
-    </section>
+    <div>
+      <div class="text-purple-500 text-5xl mb-4">
+        <i class="bi bi-cloud-fill"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">3. Conecta y gana</h3>
+      <p class="text-gray-400">Solicita o acepta viajes y recibe pagos en cripto. Conecta con otros usuarios sin intermediarios.</p>
+    </div>
+  </div>
+</section>
 
     <!-- Historia -->
-    <section id="nosotros" class="my-5">
-        <div class="bg-zinc-900 p-6 rounded-lg shadow-lg">
-          <h2 class="text-3xl font-bold text-purple-400 text-center mb-6">Nuestra Historia</h2>
-          <ul class="timeline list-unstyled">
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-lightbulb-fill fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Inicio del proyecto</div>
-                <p class="text-gray-300">Nace la idea de un transporte libre, descentralizado y automatizado.</p>
-              </div>
-            </li>
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-code-slash fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Diseño y desarrollo</div>
-                <p class="text-gray-300">Se crean los primeros prototipos y se define la arquitectura técnica de BlockRider.</p>
-              </div>
-            </li>
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-cpu fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Integración tecnológica</div>
-                <p class="text-gray-300">Implementamos IA para rutas, blockchain para pagos, y minería distribuida.</p>
-              </div>
-            </li>
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-globe fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Lanzamiento público</div>
-                <p class="text-gray-300">BlockRider sale oficialmente al mercado como plataforma abierta.</p>
-              </div>
-            </li>
-          </ul>
-          <div class="text-center mt-4">
-            <button id="toggleTimeline" onclick="toggleTimeline()" class="btn btn-outline-light text-purple-300 border-purple-400 hover:bg-purple-500 hover:text-white">
-              Ver más
-            </button>
-          </div>
-          <ul id="extra-timeline" class="timeline list-unstyled mt-4 hidden">
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-bar-chart-line-fill fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Optimización y escalabilidad</div>
-                <p class="text-gray-300">Se implementan mejoras de rendimiento y se inicia la expansión a nuevos mercados.</p>
-              </div>
-            </li>
-            <li class="mb-6 d-flex items-start gap-3">
-              <span class="text-purple-300"><i class="bi bi-shield-lock-fill fs-3"></i></span>
-              <div>
-                <div class="fw-bold text-xl">Ecosistema seguro</div>
-                <p class="text-gray-300">Smart contracts y autenticación biométrica aseguran una experiencia confiable.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      
-    <!-- Testimonios -->
-    <section class="my-5">
-      <h3 class="text-2xl font-semibold text-center mb-4 text-purple-400">Testimonios</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="p-4 border rounded shadow">
-          <p class="italic">"Ahora gano incluso sin manejar. ¡Increíble!"</p>
-          <p class="text-end mt-2 font-bold">– Marta</p>
-        </div>
-        <div class="p-4 border rounded shadow">
-          <p class="italic">"Transparencia real. Muy diferente a Uber."</p>
-          <p class="text-end mt-2 font-bold">– Diego</p>
-        </div>
-        <div class="p-4 border rounded shadow">
-          <p class="italic">"Minería y movilidad juntas. Gran idea."</p>
-          <p class="text-end mt-2 font-bold">– Lucía</p>
-        </div>
+<section class="bg-[#0c0c1a] text-white py-20 px-6 md:px-16">
+  <div class="max-w-screen-xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-purple-500 mb-4">Nuestra Historia</h2>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">Descubre las etapas que marcaron el camino de BlockRider, desde la idea inicial hasta su lanzamiento oficial.</p>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4 text-center max-w-screen-xl mx-auto">
+    
+    <!-- Etapa 1 -->
+    <div class="flex flex-col items-center bg-[#121223] p-6 rounded-lg border border-gray-700 hover:shadow-xl transition duration-300">
+      <div class="text-purple-400 text-4xl mb-4">
+        <i class="bi bi-lightbulb-fill"></i>
       </div>
-    </section>
+      <h3 class="font-bold text-lg mb-2">Inicio del proyecto</h3>
+      <p class="text-gray-400 text-sm">Nace la idea de un transporte libre, descentralizado y automatizado.</p>
+    </div>
+
+    <!-- Etapa 2 -->
+    <div class="flex flex-col items-center bg-[#121223] p-6 rounded-lg border border-gray-700 hover:shadow-xl transition duration-300">
+      <div class="text-purple-400 text-4xl mb-4">
+        <i class="bi bi-code-slash"></i>
+      </div>
+      <h3 class="font-bold text-lg mb-2">Diseño y desarrollo</h3>
+      <p class="text-gray-400 text-sm">Se crean los primeros prototipos y se define la arquitectura técnica de BlockRider.</p>
+    </div>
+
+    <!-- Etapa 3 -->
+    <div class="flex flex-col items-center bg-[#121223] p-6 rounded-lg border border-gray-700 hover:shadow-xl transition duration-300">
+      <div class="text-purple-400 text-4xl mb-4">
+        <i class="bi bi-cpu-fill"></i>
+      </div>
+      <h3 class="font-bold text-lg mb-2">Integración tecnológica</h3>
+      <p class="text-gray-400 text-sm">Implementamos IA para rutas, blockchain para pagos y minería distribuida.</p>
+    </div>
+
+    <!-- Etapa 4 -->
+    <div class="flex flex-col items-center bg-[#121223] p-6 rounded-lg border border-gray-700 hover:shadow-xl transition duration-300">
+      <div class="text-purple-400 text-4xl mb-4">
+        <i class="bi bi-globe"></i>
+      </div>
+      <h3 class="font-bold text-lg mb-2">Lanzamiento público</h3>
+      <p class="text-gray-400 text-sm">BlockRider sale oficialmente al mercado como plataforma abierta.</p>
+    </div>
+  </div>
+
+  <!-- Botón -->
+  <div class="text-center mt-12">
+    <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md transition duration-300">
+      Ver más
+    </button>
+  </div>
+</section>
+
+
+<!--Testimonios-->
+
+<section class="bg-[#0c0c1a] text-white py-20 px-4 md:px-10">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">Lo que dicen nuestros usuarios</h2>
+    <p class="text-gray-400 text-lg">Descubre por qué nuestra comunidad elige BlockRider para sus desplazamientos diarios.</p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-screen-xl mx-auto">
+    <!-- Testimonio 1 -->
+    <div class="bg-[#101020] border border-[#1f1f2e] rounded-lg p-6 text-center">
+      <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+      <p class="text-gray-300 text-sm mb-6">
+        Desde que uso BlockRider, mis ingresos han aumentado un 30%. La minería pasiva mientras conduzco es un extra que ninguna otra plataforma ofrece.
+      </p>
+      <div class="flex justify-center items-center gap-2 text-gray-400 text-sm">
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Juan" alt="Juan" class="w-8 h-8 rounded-full" />
+        Juan, conductor
+      </div>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="bg-[#101020] border border-[#1f1f2e] rounded-lg p-6 text-center">
+      <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+      <p class="text-gray-300 text-sm mb-6">
+        Me encanta la transparencia de BlockRider. Saber que apoyo un sistema descentralizado me hace sentir parte de algo importante.
+      </p>
+      <div class="flex justify-center items-center gap-2 text-gray-400 text-sm">
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Carla" alt="Carla" class="w-8 h-8 rounded-full" />
+        Carla, pasajera
+      </div>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="bg-[#101020] border border-[#1f1f2e] rounded-lg p-6 text-center">
+      <div class="text-yellow-400 text-lg mb-2">★★★★☆</div>
+      <p class="text-gray-300 text-sm mb-6">
+        Como desarrollador blockchain, puedo decir que la arquitectura de BlockRider es segura, escalable y verdaderamente descentralizada.
+      </p>
+      <div class="flex justify-center items-center gap-2 text-gray-400 text-sm">
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Leo" alt="Leo" class="w-8 h-8 rounded-full" />
+        Leo, dev
+      </div>
+    </div>
+
+    <!-- Testimonio 4 -->
+    <div class="bg-[#101020] border border-[#1f1f2e] rounded-lg p-6 text-center">
+      <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+      <p class="text-gray-300 text-sm mb-6">
+        BlockRider ha revolucionado cómo me muevo por la ciudad. Es intuitiva, rápida y los conductores son excelentes.
+      </p>
+      <div class="flex justify-center items-center gap-2 text-gray-400 text-sm">
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Marta" alt="Marta" class="w-8 h-8 rounded-full" />
+        Marta, usuaria
+    </div>
+    </div>
+</div>
+</section>
+
+<!--Formulario para enviar comentarios-->
+
+<section class="bg-[#0c0c1a] text-white py-20 px-4 md:px-10">
+<div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-white mb-2">Tu opinión cuenta</h2>
+    <p class="text-gray-400 text-lg">¿Usaste BlockRider? Déjanos tu comentario y ayuda a otros usuarios con tu experiencia.</p>
+</div>
+
+<div class="max-w-xl mx-auto bg-[#101020] border border-[#1f1f2e] rounded-lg p-6">
+    <form class="space-y-5">
+    <div>
+        <label for="nombre" class="block text-sm text-gray-400 mb-1">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+            class="w-full bg-[#0f0f1a] border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+    </div>
+
+    <div>
+        <label for="comentario" class="block text-sm text-gray-400 mb-1">Comentario</label>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe tu comentario aquí..."
+        class="w-full bg-[#0f0f1a] border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600" required></textarea>
+    </div>
+
+    <button type="submit"
+    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 rounded-md transition duration-300">
+        Enviar comentario
+    </button>
+    </form>
+</div>
+</section>
+
+
 
     <!-- Descarga -->
-    <section id="descargar" class="bg-black py-20 text-center text-white fade-in-section">
-        <h3 class="text-3xl font-bold mb-4">Descarga BlockRider</h3>
-        <p class="text-gray-400 mb-6">Muy pronto disponible para todas las plataformas:</p>
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="#" class="store-btn group flex items-center gap-3 bg-white text-black px-5 py-3 rounded-lg shadow hover:bg-purple-100 hover:scale-105 transform transition duration-300">
-            <img src="/imagenes/logo_play_store.png" alt="Google Play" class="h-6 transition duration-300 group-hover:scale-110" />
-            <span class="text-sm font-semibold">Disponible en Play Store</span>
-          </a>
-          <a href="#" class="store-btn group flex items-center gap-3 bg-white text-black px-5 py-3 rounded-lg shadow hover:bg-purple-100 hover:scale-105 transform transition duration-300">
-            <img src="/imagenes/logo-apple_store.png" alt="Apple Store" class="h-6 transition duration-300 group-hover:scale-110" />
-            <span class="text-sm font-semibold">Disponible en Apple Store</span>
-          </a>
-        </div>
-      </section>
-      
-      <script>
+
+<section class="bg-gradient-to-b from-[#0f0f0f] to-[#12121a] text-white py-20 px-4">
+<div class="text-center max-w-2xl mx-auto mb-10">
+    <h2 class="text-4xl font-extrabold text-purple-500 mb-4">Descarga BlockRider</h2>
+    <p class="text-gray-300 text-lg">Muy pronto disponible para todas las plataformas. ¡Prepárate para conducir, minar y ganar!</p>
+</div>
+
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+    <!-- Botón Play Store -->
+    <a href="#" class="bg-white text-black flex items-center gap-3 px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-transform duration-300">
+    <img src="imagenes/logo_play_store.png" alt="Play Store" class="w-6 h-6">
+    <span class="font-medium text-sm">Disponible en Play Store</span>
+    </a>
+
+    <!-- Botón App Store -->
+    <a href="#" class="bg-white text-black flex items-center gap-3 px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-transform duration-300">
+    <img src="imagenes/logo_apple_store.png" alt="App Store" class="w-6 h-6">
+    <span class="font-medium text-sm">Disponible en Apple Store</span>
+    </a>
+</div>
+</section>
+
+
+    <script>
         // Scroll-triggered animation
         const fadeInSections = document.querySelectorAll('.fade-in-section');
-      
         const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
+         entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('fade-in-visible');
-              observer.unobserve(entry.target);
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
             }
-          });
+        });
         }, {
-          threshold: 0.1
+        threshold: 0.1
         });
-      
+    
         fadeInSections.forEach(section => {
-          section.classList.add('fade-in-init');
-          observer.observe(section);
+        section.classList.add('fade-in-init');
+    observer.observe(section);
         });
-      </script>
-      
-      <style>
-      .fade-in-init {
+    </script>
+    
+    <style>
+    .fade-in-init {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 1s ease, transform 1s ease;
-      }
-      .fade-in-visible {
+    }
+    .fade-in-visible {
         opacity: 1;
         transform: translateY(0);
-      }
-      </style>
-      
-      
+    }
+    </style>
 
     <!-- Contacto -->
     <section id="contacto" class="my-5 fade-in-section">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Formulario de contacto -->
-          <div class="bg-gray-800 p-6 rounded shadow">
+        <!-- Formulario de contacto -->
+        <div class="bg-gray-800 p-6 rounded shadow">
             <h3 class="text-2xl font-semibold text-center mb-4 text-purple-400">Contáctanos</h3>
             <form class="space-y-4">
-              <div>
+            <div>
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required />
-              </div>
-              <div>
+            </div>
+            <div>
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required />
-              </div>
-              <div>
+            </div>
+            <div>
                 <label for="mensaje" class="form-label">Mensaje</label>
                 <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-              </div>
-              <div class="text-center">
+            </div>
+            <div class="text-center">
                 <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
+            </div>
             </form>
-          </div>
-      
-          <!-- Información de contacto -->
-          <div class="bg-[#181828] p-6 rounded shadow text-white">
+        </div>
+        <!-- Información de contacto -->
+        <div class="bg-[#181828] p-6 rounded shadow text-white">
             <h4 class="text-xl font-semibold mb-4 text-purple-300">Información de contacto</h4>
             <ul class="space-y-4 text-sm mb-6">
-              <li class="flex items-center gap-3">
+            <li class="flex items-center gap-3">
                 <i class="bi bi-geo-alt-fill text-purple-400"></i>
                 <span>Calle Blockchain 123, Ciudad Cripto, CR</span>
-              </li>
-              <li class="flex items-center gap-3">
+            </li>
+            <li class="flex items-center gap-3">
                 <i class="bi bi-envelope-fill text-purple-400"></i>
                 <span>contacto@blockrider.io</span>
-              </li>
-              <li class="flex items-center gap-3">
+            </li>
+            <li class="flex items-center gap-3">
                 <i class="bi bi-telephone-fill text-purple-400"></i>
                 <span>+506 800-BLOCKRIDER</span>
-              </li>
-              <li class="flex items-center gap-3">
+            </li>
+            <li class="flex items-center gap-3">
                 <i class="bi bi-clock-fill text-purple-400"></i>
                 <span>Lunes a Viernes, 9am - 6pm</span>
-              </li>
-              <li class="flex items-center gap-3">
+            </li>
+            <li class="flex items-center gap-3">
                 <i class="bi bi-globe2 text-purple-400"></i>
                 <span><a href="https://blockrider.io" class="underline hover:text-purple-300">www.blockrider.io</a></span>
-              </li>
+            </li>
             </ul>
             <iframe class="w-full h-48 rounded" frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=San+José,Costa+Rica" allowfullscreen>
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=San+José,Costa+Rica" allowfullscreen>
             </iframe>
-          </div>
         </div>
-      </section>
-
-     
+        </div>
+    </section>
 
 <!--Faq section-->
         
-    <section id="faq" class="faq-section">
-  <div class="container">
-    <h1 class="section-title">Preguntas frecuentes</h2>
-    <p class="section-subtitle">Resolvemos tus dudas sobre BlockRider y cómo puedes aprovechar al máximo nuestra plataforma.</p>
+<section class="bg-[#0c0c1a] text-white py-20 px-4 md:px-10">
+<div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">Preguntas frecuentes</h2>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">Resolvemos tus dudas sobre BlockRider y cómo puedes aprovechar al máximo nuestra plataforma.</p>
+</div>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Qué es BlockRider y cómo funciona?</button>
-      <div class="faq-answer">BlockRider es una plataforma descentralizada que combina transporte y minería de criptomonedas. Usas la app para moverte y, al mismo tiempo, ganar recompensas.</div>
-    </div>
+<div class="max-w-3xl mx-auto space-y-4">
+    <!-- FAQ Item -->
+    <details class="group border-b border-gray-700">
+    <summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Qué es BlockRider y cómo funciona?
+        <span class="transition-transform group-open:rotate-180">
+        <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+        BlockRider es una plataforma descentralizada de transporte que te permite ganar cripto mientras usas la app, ya sea como conductor o pasajero.
+    </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Cómo puedo ganar dinero con la minería mientras uso la app?</button>
-      <div class="faq-answer">La app utiliza recursos de tu dispositivo para minería ligera mientras estás en ruta, generándote recompensas automáticamente.</div>
-    </div>
+    <details class="group border-b border-gray-700">
+    <summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Cómo puedo ganar dinero con la minería mientras uso la app?
+        <span class="transition-transform group-open:rotate-180">
+        <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+        Puedes activar la minería en segundo plano desde tu móvil o escritorio, generando ingresos pasivos sin afectar tu experiencia.
+    </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Es seguro usar BlockRider?</button>
-      <div class="faq-answer">Sí, utilizamos cifrado de extremo a extremo y tecnologías blockchain para garantizar la seguridad de tus datos y transacciones.</div>
-    </div>
+    <details class="group border-b border-gray-700">
+    <summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Es seguro usar BlockRider?
+        <span class="transition-transform group-open:rotate-180">
+        <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+        Sí. BlockRider utiliza tecnología blockchain para garantizar seguridad, transparencia y descentralización total.
+    </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Cuándo estará disponible la app para descargar?</button>
-      <div class="faq-answer">La app estará disponible en versión beta a partir del próximo mes en iOS y Android.</div>
-    </div>
+    <details class="group border-b border-gray-700">
+    <summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Cuándo estará disponible la app para descargar?
+    <span class="transition-transform group-open:rotate-180">
+        <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+        Estamos en fase beta. Pronto estará disponible para Android, iOS y versión web para escritorio.
+    </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Qué criptomonedas acepta BlockRider?</button>
-      <div class="faq-answer">Aceptamos Bitcoin, Ethereum, y nuestro token nativo BRIDE.</div>
-    </div>
+<details class="group border-b border-gray-700">
+<summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Qué criptomonedas acepta BlockRider?
+    <span class="transition-transform group-open:rotate-180">
+    <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+    Aceptamos Bitcoin, Ethereum, y nuestro token nativo BRIDE.
+    </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">¿Cómo se diferencia BlockRider de otras apps de transporte?</button>
-      <div class="faq-answer">A diferencia de otras, BlockRider te paga mientras te mueves, gracias a su integración con tecnología blockchain y minería en segundo plano.</div>
-    </div>
-  </div>
+    <details class="group border-b border-gray-700">
+    <summary class="flex justify-between items-center cursor-pointer py-4 text-lg font-medium hover:text-purple-400 transition-colors">
+        ¿Cómo se diferencia BlockRider de otras apps de transporte?
+        <span class="transition-transform group-open:rotate-180">
+        <i class="bi bi-chevron-down text-gray-400"></i>
+        </span>
+    </summary>
+    <p class="text-gray-400 pb-4 text-sm">
+        BlockRider te paga por usar la app, te conecta sin intermediarios y te da control sobre tus datos y ganancias. Es descentralizada, colaborativa y transparente.
+    </p>
+    </details>
+</div>
 </section>
 
-      <!--JS para conectar Metamask-->
+
+    <!--JS para conectar Metamask-->
 
 <script>
-  async function conectarWallet() {
+async function conectarWallet() {
     if (window.ethereum) {
-      try {
+    try {
         const cuentas = await window.ethereum.request({ method: 'eth_requestAccounts' });
         alert(`Wallet conectada: ${cuentas[0]}`);
-      } catch (err) {
+    } catch (err) {
         alert('Acceso denegado a la wallet');
-      }
-    } else {
-      alert('MetaMask no está instalada. Por favor instálala para continuar.');
     }
-  }
+    } else {
+    alert('MetaMask no está instalada. Por favor instálala para continuar.');
+    }
+}
 </script>
 
 <!--Banner de bienvenida con CTA-->
-
-<section class="bg-gradient-to-r from-purple-600 to-purple-500 text-white py-20 px-6 text-center rounded-lg mx-4 my-10 shadow-lg">
-  <h2 class="text-4xl font-bold mb-4">¡Únete a la revolución BlockRider!</h2>
-  <p class="text-lg mb-8 max-w-2xl mx-auto">Sé parte del futuro del transporte descentralizado. Conecta tu wallet, únete a la comunidad y comienza a generar ingresos mientras te mueves.</p>
-  <div class="flex justify-center gap-4 flex-wrap">
-    <button onclick="conectarWallet()" class="bg-gray-900 text-white px-5 py-3 rounded-lg hover:bg-gray-700 transition">
-      <i class="bi bi-wallet2"></i> Conectar Wallet
-    </button>
-    <a href="#contacto" class="bg-white text-purple-700 px-5 py-3 rounded-lg hover:bg-purple-100 transition">
-      Contactar →
-    </a>
+<section class="w-full bg-gradient-to-br from-[#2e026d] via-[#6b21a8] to-[#9333ea] text-white py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center rounded-2xl bg-[#ffffff0a] backdrop-blur-sm shadow-xl p-10">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      ¡Únete a la revolución BlockRider!
+    </h2>
+    <p class="text-lg md:text-xl text-purple-100 mb-8">
+      Transforma tu forma de moverte. Conecta tu wallet, únete a la comunidad y genera ingresos mientras viajas.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition">
+        <i class="bi bi-wallet2 me-2"></i>Conectar Wallet
+      </button>
+      <a href="#contacto" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg hover:bg-purple-100 transition flex items-center justify-center gap-2">
+        Contactar <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
   </div>
 </section>
 
 
 
-      <!--footer mejorado con Newletter-->
-      <footer class="bg-[#0f0f0f] text-gray-300 py-10 px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+
+
+
+<!--footer mejorado con Newletter-->
+    <footer class="bg-[#0f0f0f] text-gray-300 py-10 px-6">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Marca -->
     <div>
-      <h4 class="text-xl font-bold text-white mb-2">BlockRider</h4>
-      <p class="text-sm">Revolucionando el transporte con blockchain, IA y minería cripto.</p>
-      <div class="flex gap-3 mt-4 text-purple-400">
+    <h4 class="text-xl font-bold text-white mb-2">BlockRider</h4>
+    <p class="text-sm">Revolucionando el transporte con blockchain, IA y minería cripto.</p>
+    <div class="flex gap-3 mt-4 text-purple-400">
         <i class="bi bi-twitter"></i>
         <i class="bi bi-instagram"></i>
         <i class="bi bi-linkedin"></i>
-      </div>
+    </div>
     </div>
 
     <!-- Enlaces rápidos -->
     <div>
-      <h5 class="font-bold mb-2">Enlaces rápidos</h5>
-      <ul class="space-y-1 text-sm">
+    <h5 class="font-bold mb-2">Enlaces rápidos</h5>
+    <ul class="space-y-1 text-sm">
         <li><a href="#inicio" class="hover:text-purple-300">Inicio</a></li>
         <li><a href="#nosotros" class="hover:text-purple-300">Nosotros</a></li>
         <li><a href="#contacto" class="hover:text-purple-300">Contacto</a></li>
         <li><a href="#faq" class="hover:text-purple-300">Preguntas Frecuentes</a></li>
-      </ul>
+    </ul>
     </div>
 
     <!-- Legal -->
     <div>
-      <h5 class="font-bold mb-2">Legal</h5>
-      <ul class="space-y-1 text-sm">
+    <h5 class="font-bold mb-2">Legal</h5>
+    <ul class="space-y-1 text-sm">
         <li><a href="#" class="hover:text-purple-300">Términos y Condiciones</a></li>
         <li><a href="#" class="hover:text-purple-300">Política de Privacidad</a></li>
         <li><a href="#" class="hover:text-purple-300">Cookies</a></li>
-      </ul>
+    </ul>
     </div>
 
     <!-- Newsletter -->
     <div>
-      <h5 class="font-bold mb-2">Suscríbete</h5>
-      <p class="text-sm mb-2">Recibe novedades de BlockRider</p>
-      <form onsubmit="suscribirEmail(event)" class="flex flex-col sm:flex-row gap-2">
+    <h5 class="font-bold mb-2">Suscríbete</h5>
+    <p class="text-sm mb-2">Recibe novedades de BlockRider</p>
+    <form onsubmit="suscribirEmail(event)" class="flex flex-col sm:flex-row gap-2">
         <input type="email" required placeholder="tu@email.com" class="px-4 py-2 rounded text-black w-full" />
         <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Suscribir</button>
-      </form>
+    </form>
     </div>
-  </div>
-  <div class="text-center mt-10 text-xs text-gray-500">&copy; 2025 BlockRider. Todos los derechos reservados.</div>
+</div>
+<div class="text-center mt-10 text-xs text-gray-500">&copy; 2025 BlockRider. Todos los derechos reservados.</div>
 </footer>
 
-  
-  <script>
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const answer = btn.nextElementSibling;
-      const isVisible = answer.style.display === 'block';
-      document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-      answer.style.display = isVisible ? 'none' : 'block';
+
+<script>
+const toggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+<!--JS para hamburguesa-->
+  // Cierra el menú cuando haces clic en un enlace (opcional)
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
     });
-  });
+});
 </script>
-
-
-    
-
-  
 </body>
 </html>
-
